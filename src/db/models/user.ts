@@ -1,33 +1,30 @@
 import { Model, DataTypes } from "sequelize";
 import connection from "../connection";
 
-interface MoodAttributes {
+interface UserAttributes {
   id?: number,
-  name: string,
+  oauthId: string,
   createdAt?: Date,
   updatedAt?: Date
 }
 
-class Mood extends Model<MoodAttributes> implements MoodAttributes {
+class User extends Model<UserAttributes> implements UserAttributes {
   public id!: number;
-  public name!: string;
+  public oauthId!: string;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
 
-Mood.init({
+User.init({
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
     type: DataTypes.NUMBER
   },
-  name: DataTypes.STRING
+  oauthId: DataTypes.STRING
 }, {
-  sequelize: connection,
-  modelName: 'Mood',
+    sequelize: connection,
+    modelName: 'User',
 });
-
-export default Mood;
-
