@@ -5,8 +5,13 @@ import moodsRouter from "./routes";
 dotenv.config();
 
 const app: Express = express();
+
+// App Middlewares
+app.use(express.json());
+
 const port = process.env.PORT;
 
+// App routers
 app.use('/moods', moodsRouter);
 
 app.get( "/", (_req: Request, res: Response) => {
