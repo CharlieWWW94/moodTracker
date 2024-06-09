@@ -10,7 +10,7 @@ const db_password: string = process.env.DB_PASSWORD ?? "";
 const db_port: number = Number(process.env.DB_PORT) ?? 5432;
 
 
-let sequelizeConnection: Sequelize = new Sequelize(db, db_user, db_password, {
+const sequelizeConnection: Sequelize = new Sequelize(db, db_user, db_password, {
   host: process.env.HOST,
   dialect: "postgres",
   port: db_port 

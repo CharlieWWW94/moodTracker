@@ -2,6 +2,7 @@
   "name": "moodtracker",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +10,8 @@
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts",
     "db:create": "sequelize db:create",
-    "db:migrate": "sequelize db:migrate"
+    "db:migrate": "sequelize db:migrate",
+    "lint": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
@@ -23,13 +25,17 @@
     "sequelize-typescript": "^2.1.6"
   },
   "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/express": "^4.17.21",
     "@types/node": "^20.13.0",
     "@types/sequelize": "^4.28.20",
     "@types/validator": "^13.11.10",
+    "eslint": "^8.57.0",
     "nodemon": "^3.1.2",
     "sequelize-cli": "^6.6.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.12.0"
   }
 }
